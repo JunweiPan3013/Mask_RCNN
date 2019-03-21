@@ -127,7 +127,7 @@ See examples in `samples/shapes/train_shapes.ipynb`, `samples/coco/coco.py`, `sa
 ## Differences from the Official Paper
 This implementation follows the Mask RCNN paper for the most part, but there are a few cases where we deviated in favor of code simplicity and generalization. These are some of the differences we're aware of. If you encounter other differences, please do let us know.
 
-* **Image Resizing:** To support training multiple images per batch we resize all images to the same size. For example, 1024x1024px on MS COCO. We preserve the aspect ratio, so if an image is not square we pad it with zeros. In the paper the resizing is done such that the smallest side is 800px and the largest is trimmed at 1000px.
+* **Image Resizing:** To support training multiple images per batch we resize all images to the same size. For example, 1024x1024px on MS COCO. We preserve the aspect ratio, so if an image is not square we pad it with zeros. In the paper, the resizing is done such that the smallest size is 800px and the largest is trimmed at 1000px.
 * **Bounding Boxes**: Some datasets provide bounding boxes and some provide masks only. To support training on multiple datasets we opted to ignore the bounding boxes that come with the dataset and generate them on the fly instead. We pick the smallest box that encapsulates all the pixels of the mask as the bounding box. This simplifies the implementation and also makes it easy to apply image augmentations that would otherwise be harder to apply to bounding boxes, such as image rotation.
 
     To validate this approach, we compared our computed bounding boxes to those provided by the COCO dataset.
@@ -155,7 +155,7 @@ Use this bibtex to cite this repository:
 ```
 
 ## Contributing
-Contributions to this repository are welcome. Examples of things you can contribute:
+Contributions to this repository are welcome. Examples of things you can contribute to:
 * Speed Improvements. Like re-writing some Python code in TensorFlow or Cython.
 * Training on other datasets.
 * Accuracy Improvements.
