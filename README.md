@@ -10,7 +10,7 @@ The repository includes:
 * Pre-trained weights for MS COCO
 * Jupyter notebooks to visualize the detection pipeline at every step
 * ParallelModel class for multi-GPU training
-* Evaluation on MS COCO metrics (AP)
+* Evaluation of MS COCO metrics (AP)
 * Example of training on your own dataset
 
 
